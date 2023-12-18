@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  --header: #ff2c2c;
+  --body-color: #eeeeee;
+  --days: #cccccc;
+  --days-border: #d7d7d7;
+  --days-calender-border: #e6e6e6;
+  --days-weekends: #e6e6e6;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  user-select: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--body-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  display: grid;
+  width: 450px;
+  height: 420px;
+  grid-template-rows: 1fr 0.5fr 5fr;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px var(--days);
+  overflow: hidden;
+}
+
+#month {
+  background-color: var(--header);
+  grid-column: span 7;
+  grid-row: span 1;
+  color: white;
+  font-size: 150%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+#week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-column: span 7;
+  grid-row: span 1;
+  background-color: var(--days);
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--days-calender-border);
+    border-block: none;
+    font-size: 65%;
+    font-weight: bold;
+  }
+}
+#day {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+
+  grid-column: span 7;
+  grid-row: span 1;
+  gap: 1.33px;
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-size: 90%;
+  }
+  .weekend {
+    background-color: var(--days-weekends);
+  }
+  .today {
+    background-color: var(--header);
+    width: 55%;
+    height: 55%;
+    border-radius: 50px;
+    color: white;
+  }
+  .outofscope {
+    color: var(--days);
+  }
+}
+
+#prev-month {
+  position: absolute;
+  left: 25px;
+  padding: 5px;
+  font-weight: bold;
+}
+#next-month {
+  position: absolute;
+  right: 25px;
+  padding: 5px;
+  font-weight: bold;
+}
+#prev-month:hover {
+  cursor: pointer;
+  scale: 1.75;
+}
+#next-month:hover {
+  cursor: pointer;
+  scale: 1.75;
+}
