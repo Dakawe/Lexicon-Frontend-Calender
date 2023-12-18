@@ -71,6 +71,7 @@ main {
     align-items: center;
     background-color: white;
     font-size: 115%;
+    font-weight: bold;
   }
   .weekend {
     background-color: var(--days-weekends);
